@@ -59,7 +59,7 @@
                     <h1>Empowering Your Journey to Unleash and Share Your Bold, <b>Awesome Creations!</b></h1>
                     <p>Unlocking the Power of Video, One Download at a Time via CodeKosh.</p>
                     <div class="buttons">
-                        <button id="downloadButton">Download for Android</button><br>
+                        <button onclick="location.href='';">Download for Android</button><br>
                     </div>
                 </div>
             </div>
@@ -155,35 +155,6 @@
         </div>
     </div>
     <script src="js/main.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
-    <script>
-        // Initialize Firebase
-        var firebaseConfig = {
-            apiKey: "AIzaSyBIfbWx6fTjtOyiqSXQ_YNge0QIXafKuzg",
-            authDomain: "vidtool-asp.firebaseapp.com",
-            databaseURL: "https://vidtool-asp-default-rtdb.firebaseio.com",
-            projectId: "vidtool-asp",
-            storageBucket: "vidtool-asp.appspot.com",
-            messagingSenderId: "648836650350",
-            appId: "1:648836650350:web:14b7b9b99d4246ee74dd7f",
-            measurementId: "G-29MTPZN0VX"
-        };
-        firebase.initializeApp(firebaseConfig);
-      
-        // Reference to the Firebase Realtime Database
-        var database = firebase.database().ref('update/upd/link');
-      
-        // Retrieve the URL from the Firebase Realtime Database
-        database.on('value', function(snapshot) {
-          var url = snapshot.val();
-          // Update the button's link
-          var downloadButton = document.getElementById('downloadButton');
-          downloadButton.onclick = function() {
-            location.href = url;
-          };
-        });
-      </script>
 </body>
 
 </html>
