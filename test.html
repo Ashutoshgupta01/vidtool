@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .menu-item {
+            cursor: pointer;
+        }
+
+        .selected {
+            background-color: yellow;
+        }
+
+        .box {
+            display: none;
+            width: 100px;
+            height: 100px;
+            background-color: lightgray;
+            margin-top: 10px;
+        }
+
+        .selected .box {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <aside>
+        <div class="menu-item" onclick="selectItem(this)">
+            Item 1
+            <div class="box"></div>
+        </div>
+        <div class="menu-item" onclick="selectItem(this)">
+            Item 2
+            <div class="box"></div>
+        </div>
+        <div class="menu-item" onclick="selectItem(this)">
+            Item 3
+            <div class="box"></div>
+        </div>
+    </aside>
+
+    <script>
+        function selectItem(item) {
+            // Remove 'selected' class from all menu items
+            var menuItems = document.querySelectorAll('.menu-item');
+            menuItems.forEach(function (menuItem) {
+                menuItem.classList.remove('selected');
+            });
+
+            // Add 'selected' class to the clicked item
+            item.classList.add('selected');
+            var navItems = document.querySelectorAll('.doc__nav li');
+            navItems.forEach(function (item) {
+                item.classList.remove('selected');
+            });
+
+            // Add the 'selected' class to the clicked navigation item
+            var selectedNavItem = document.querySelector('.doc__nav li[data-section="' + section + '"]');
+            selectedNavItem.classList.add('selected');
+        }
+    </script>
+</body>
+
+</html>
